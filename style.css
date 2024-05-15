@@ -1,0 +1,278 @@
+/* Laatikot ja body */
+body {
+    font-family:'Montserrat', sans-serif;
+    background:#98d6f3;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #371f18;
+}
+.tausta {
+    flex: 1;
+}
+.info {
+    border: 2px solid #371f18;
+    background: linear-gradient(#d5f383, #679436);
+    width: 90%;
+    height: max-content;
+    margin: 10px auto 10px;
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+}
+.info h1 {
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 20px;
+}
+.lista {
+    border: 2px solid #371f18;
+    background: linear-gradient(#d5f383, #679436);
+    width: 90%;
+    margin: 5px auto 10px;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+/* --------------- */
+/* Responsiivisuus */
+/* --------------- */
+
+/* MOBIILI */
+@media (max-width: 770px) {
+    nav li {
+        display:inline-block;
+        text-align: center;
+      }
+    .logokuvake {
+        padding-left: 5px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        height: 70px;
+        transform: scaleX(-1);
+        background-image: url(gallery/gilbert_mobile.svg);
+        background-size: cover;
+        cursor: copy;
+    }
+    nav .navi {
+        height: 80px;
+    }
+    .navi {
+        display: none;
+    }
+    nav .navi.show {
+        display: block;
+        text-align: center;
+        font-size: 15px;
+        height: fit-content;
+    }
+    footer {
+        font-size: 15px;
+    }
+    .lista {
+        min-height: 500px;
+        height: fit-content;
+    }
+}
+/* PC */
+@media (min-width: 771px) {
+    nav li {
+        display:inline;
+        float: left;
+      }
+      
+    .logokuvake {
+        padding-right: 15px;
+        float: left;
+        width: auto;
+        height: 50px;
+    }
+
+    nav a {
+        display: block;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .login   {
+        float: right;
+        padding: 5px;
+    }
+    .tpohja {
+        height: 800px;
+        max-height: 480px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+/* ---------- */
+/* Navigointi */
+/* ---------- */
+nav {
+    overflow: hidden;
+    padding: 10px 10px;
+    border-bottom: 2px solid #371f18;
+    background: #8b584a;
+    width: 100%;
+}
+
+nav a:hover {
+    color: #371f18;
+}
+
+.aktiv {
+    color: #371f18;
+    font-weight: bold;
+}
+
+nav li {
+    list-style-type: none;
+    margin: 0;
+    padding: 1px;
+    overflow: hidden;
+    background-image: none;
+}
+
+nav li::before {
+    background-image: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #faf6f0;
+}
+
+/* ---- */
+/* Muut */
+/* ---- */
+
+/* Napit */
+.btn {
+    color: #faf6f0;
+    background-color: #4bb83d;
+    border-radius: 10px;
+    border-bottom: 2px solid #2a5724;
+}
+.btn:hover {
+    color: #371f18;
+    background-color: #ec7166;
+    border-radius: 10px;
+    border-bottom: 2px solid #371f18;;
+}
+
+.fbtn {
+    color: #371f18;
+    background-color: #ec7166;
+    border-radius: 50px;
+    border: none;
+    width: 45px;
+    height: 40px;
+    margin-left: 5px;
+    border-bottom: 2px solid #371f18;
+}
+.fbtn:hover {
+    color: #faf6f0;
+    background-color: #371f18;
+    border-radius: 50px;
+    border: none;
+    width: 45px;
+    height: 40px;
+}
+
+/* Footeri */
+footer {
+    border-top: 2px solid #371f18;
+    text-align: center;
+    background: #8b584a;
+    color:#faf6f0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+}
+
+/* ---- */
+/* ToDo */
+/* ---- */
+
+
+/*Tekstikenttä*/
+.tekstikentta {
+    display: flex;
+    padding: 10px;
+    background: #8b584a;
+    border-radius: 20px;
+    border-bottom: 2px solid #371f18;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: fit-content;
+}
+input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+input::placeholder {
+    color: #faf6f0;
+}
+/* Lista */
+ul li span {
+    position: absolute;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background: none;
+    line-height: 40px;
+    border-radius: 40px;
+}
+ul li span:hover {
+    background: #ec7166;
+}
+li {
+    list-style: none;
+    font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+    padding: 12px 8px 12px 50px;
+    position: relative;
+    color:#faf6f0;
+}
+li::before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-image: url(gallery/unchecked.svg);
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 2px;
+}
+li.valmis {
+    color: #344b1b;
+    text-decoration: line-through;
+}
+li.valmis::before {
+    background-image: url(gallery/checked.svg);
+}
+
+/*Scrollbar tehtävälistalle */
+.tpohja::-webkit-scrollbar {
+    width: 13px;
+}
+.tpohja::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #8b584a;;
+}
+.tpohja::-webkit-scrollbar-thumb {
+    background: linear-gradient(#d5f383, #679436); 
+    border-radius: 10px;
+    border: 1px solid #5e2f29;;
+}
+.tpohja::-webkit-scrollbar-thumb:hover {
+    background: #4bb83d; 
+}
