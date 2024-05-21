@@ -47,7 +47,7 @@ $(document).on('click', '#tehtavapohja', function(event) {
     if (target.tagName === "LI") {
         // Merkataan onko tehtävä tehty, default=false
         var tehtava = target;
-        var tieto = Array.from(tehtavapohja.children).indexOf(tehtava);
+        var tieto = Array.from($('#tehtavapohja').children()).indexOf(tehtava);
 
         todo[tieto].valmis = !todo[tieto].valmis;
 
@@ -60,7 +60,7 @@ $(document).on('click', '#tehtavapohja', function(event) {
     } else if (target.tagName === "SPAN") {
         // Poista tehtävä
         var tehtava = target.parentElement;
-        var tieto = Array.from(tehtavapohja.children).indexOf(tehtava);
+        var tieto = Array.from($('#tehtavapohja').children()).indexOf(tehtava);
 
         // Poistetaan tiedot
         todo.splice(tieto, 1);
@@ -69,7 +69,7 @@ $(document).on('click', '#tehtavapohja', function(event) {
         tallenna();
         console.log("Tehtävä poistettu");
     }
-}, false);
+});
 
 
 // Poistonappi
@@ -130,10 +130,10 @@ function login() {
 
 // Hampparimenu! :D, vain puhelimelle, muuten heittää varoitusta konsoliin.
 function openMenu() {
-    var navbar = document.getElementById('navbar');
+    var $navi = $('#navbar');
 
-    if (window.innerWidth <= 768) {
-        navbar.classList.toggle('show');
+    if ($(window).width() <= 768) {
+        $navi.toggleClass('show');
         merkkiaani('/gallery/audio/Cartoon.mp3');
     }
     else {
