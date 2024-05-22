@@ -3,7 +3,8 @@ var todo = $.parseJSON(localStorage.getItem("MatoMissio")) || [];
 
 // ladataan aiemmat mahdolliset tehtävät ja esitetään ne konsolissa
 $(document).ready(function() {
-    tuoTehtavat();
+    // Kutsutaan funtio
+    tuoTehtavat();  
     console.log(todo);
 });
 
@@ -23,6 +24,7 @@ function uusiTehtava() {
         });
 
         poistoNappi();
+        $('#tehtavapohja li').fadeIn(400);
         $('#tehtavanimi').val("");
         tallenna();
         console.log("Tehtävä lisätty");
@@ -44,7 +46,7 @@ function uusiTehtava() {
 $(document).on('click', '#tehtavapohja', function(event) {
     var target = event.target;
 
-    if (target.tagName === "LI") {
+    if ($(target).prop("tagName") === "LI") {
         // Merkataan onko tehtävä tehty, default=false
         var tehtava = target;
         var tieto = Array.from($('#tehtavapohja').children()).indexOf(tehtava);
@@ -53,19 +55,24 @@ $(document).on('click', '#tehtavapohja', function(event) {
 
         // CSS & Äänimerkki
         tehtava.classList.toggle("valmis");
+        $(tehtava).hide();
+        $(tehtava).fadeToggle(400);
+
         merkkiaani('gallery/audio/Wood.mp3')
         console.log("Tehtävän tila muuttunut");
         tallenna();
 
-    } else if (target.tagName === "SPAN") {
+    } else if ($(target).prop("tagName") === "SPAN") {
         // Poista tehtävä
-        var tehtava = target.parentElement;
+        var tehtava = target.closest('li');
         var tieto = Array.from($('#tehtavapohja').children()).indexOf(tehtava);
 
         // Poistetaan tiedot
         todo.splice(tieto, 1);
-        tehtava.remove();
-
+        $(tehtava).fadeOut(400);
+        setTimeout( function() {
+            $(tehtava).remove();
+        }, 500);
         tallenna();
         console.log("Tehtävä poistettu");
     }
@@ -85,30 +92,25 @@ function poistoNappi() {
     $('#tehtavapohja').append(li);
 }
 
-// Tuo Tehtavat
 function tuoTehtavat() {
-    // Tyhjennetään lista, ei haluta dublikaatteja
-    $('#tehtavapohja').html('');
+        $('#tehtavapohja').html('');  // Clear the list
 
-    //Lisätään järjestyksessä lista takaisin sivulle näkyville
-    todo.forEach(function(tehtava) {
-        var li = document.createElement("li");
-        li.textContent = tehtava.nimi;
+        todo.forEach(function(tehtava) {
+            var li = $("<li>").html(tehtava.nimi);
 
-        // Poistonappi tehtävien perään
-        var del = document.createElement("span");
-        del.innerHTML = "❌";
-        li.appendChild(del);
+            var del = $("<span>").html("❌");
+            $(li).append(del);
 
-        // Jos tehtävä jo tehty, näytetään valmiina
-        if (tehtava.valmis) {
-            li.classList.add("valmis");
-        }
+            if (tehtava.val) {
+                $(li).addClass("valmis");
+            }
 
-        // Tehtävät listaan ja konsoliin logia
-        $(tehtavapohja).append(li);
-        console.log("Tiedot palautettu välimuistista");
-    });
+            // Fade listalle
+            $('#tehtavapohja').append(li);
+            $(li).fadeIn(1500);
+
+            console.log("Tiedot palautettu välimuistista");
+        });
 }
 
 // Tallennus välimuistiin

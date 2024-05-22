@@ -1,7 +1,7 @@
 /* Laatikot ja body */
 body {
     font-family:'Montserrat', sans-serif;
-    background:#98d6f3;
+    background:#5c2d18ce;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -114,7 +114,7 @@ nav {
     overflow: hidden;
     padding: 10px 10px;
     border-bottom: 2px solid #371f18;
-    background: #8b584a;
+    background: #5285319d;
     width: 100%;
 }
 
@@ -233,6 +233,7 @@ ul li span:hover {
     background: #ec7166;
 }
 li {
+    display: none;
     list-style: none;
     font-size: 20px;
     user-select: none;
@@ -259,7 +260,6 @@ li.valmis {
 li.valmis::before {
     background-image: url(gallery/checked.svg);
 }
-
 /*Scrollbar tehtävälistalle */
 .tpohja::-webkit-scrollbar {
     width: 13px;
