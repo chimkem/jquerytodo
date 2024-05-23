@@ -129,6 +129,7 @@ function forgetMe() {
 // Ilmoitetaan, ettei voi kirjautua
 function login() {
     alert("Jotain meni vikaan, yritä myöhemmin uudelleen!");
+    return false;
 }
 
 // Hampparimenu! :D, vain puhelimelle, muuten heittää varoitusta konsoliin.

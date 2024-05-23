@@ -1,1 +1,1 @@
-Tämä nettisivu on toteutettu Laurean JavaScript-kurssin ensimmäistä tehtävää varten käyttämäen HTML, CSS ja JavaScriptiä.
+Tämä nettisivu on toteutettu Laurean JavaScript-kurssin kolmatta tehtävää varten käyttäen HTML, CSS, JQuerya ja JavaScriptiä.

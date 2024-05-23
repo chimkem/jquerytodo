@@ -1,0 +1,60 @@
+.loginboxi{
+    border-top: 5px solid #dbf3c1;
+    border-bottom: 5px solid #51752a;
+    background: linear-gradient(#d5f383, #679436);
+    width: 90%;
+    height: fit-content;
+    margin: 30px auto 30px;
+    padding-top: 50px;
+    border-radius: 30px;
+    text-align: center;
+}
+form {
+    margin: 35px;
+    font-size: 20px;
+}
+input {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #2a5724;
+    background-color: #2a5724;
+}
+/* Napit */
+.cbtn {
+    color: #faf6f0;
+    background-color: #4bb83d;
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-bottom: 2px solid #2a5724;
+}
+.cbtn:hover {
+    color: #371f18;
+    background-color: #ec7166;
+    height: 40px;
+    width: 100px;
+    border-bottom: 2px solid #371f18;;
+}
+
+.ebtn {
+    color: #371f18;
+    background-color: #ec7166;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-bottom: 2px solid #371f18;
+}
+.ebtn:hover {
+    color: #faf6f0;
+    background-color: #371f18;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    border-bottom: 2px solid #371f18;
+}
