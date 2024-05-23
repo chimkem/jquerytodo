@@ -120,7 +120,7 @@ function tallenna() {
 }
 
 // "Unohda minut" -toiminto
-function forgetMe() {;
+function forgetMe() {
     alert("Nollataan sivu...");
     localStorage.clear();
     location.reload();

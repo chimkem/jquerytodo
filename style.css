@@ -195,7 +195,6 @@ footer {
 footer p {
     padding-top: 15px;
     font-size: 17px;
-    font-weight: bold;
     color: #371f18;
 }
 
@@ -247,7 +246,7 @@ li {
     cursor: pointer;
     padding: 12px 8px 12px 50px;
     position: relative;
-    color:#faf6f0;
+    color: #371f18;
 }
 li::before {
     content: '';
@@ -262,7 +261,7 @@ li::before {
 }
 
 li.valmis {
-    color: #344b1b;
+    color: #371f18;
     text-decoration: line-through;
 }
 li.valmis::before {
