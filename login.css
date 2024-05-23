@@ -21,8 +21,8 @@ input {
     margin: 10px;
     border-radius: 10px;
     text-align: center;
-    border: 1px solid #2a5724;
-    background-color: #2a5724;
+    background: #8b584a;
+    border-bottom: 2px solid #371f18;
 }
 /* Napit */
 .cbtn {
