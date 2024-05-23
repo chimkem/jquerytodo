@@ -59,8 +59,9 @@ $(document).on('click', '#tehtavapohja', function(event) {
         $(tehtava).fadeToggle(400);
 
         merkkiaani('gallery/audio/Wood.mp3')
-        console.log("Tehtävän tila muuttunut");
         tallenna();
+        console.log("Tehtävän tila muuttunut");
+        
 
     } else if ($(target).prop("tagName") === "SPAN") {
         // Poista tehtävä
@@ -101,7 +102,7 @@ function tuoTehtavat() {
             var del = $("<span>").html("❌");
             $(li).append(del);
 
-            if (tehtava.val) {
+            if (tehtava.valmis) {
                 $(li).addClass("valmis");
             }
 
