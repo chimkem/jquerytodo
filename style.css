@@ -1,7 +1,7 @@
 /* Laatikot ja body */
 body {
-    font-family:'Montserrat', sans-serif;
-    background:#5c2d18ce;
+    font-family:'Montserrat', sans-serif;;
+    background: #38e8ff9d;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -11,7 +11,8 @@ body {
     flex: 1;
 }
 .info {
-    border: 2px solid #371f18;
+    border-top: 5px solid #dbf3c1;
+    border-bottom: 5px solid #51752a;
     background: linear-gradient(#d5f383, #679436);
     width: 90%;
     height: max-content;
@@ -26,7 +27,8 @@ body {
     padding-top: 20px;
 }
 .lista {
-    border: 2px solid #371f18;
+    border-top: 5px solid #dbf3c1;
+    border-bottom: 5px solid #51752a;
     background: linear-gradient(#d5f383, #679436);
     width: 90%;
     margin: 5px auto 10px;
@@ -113,8 +115,8 @@ body {
 nav {
     overflow: hidden;
     padding: 10px 10px;
-    border-bottom: 2px solid #371f18;
-    background: #5285319d;
+    border-bottom: 5px solid #4c791de3;
+    background: linear-gradient(#d5f383, #679436);
     width: 100%;
 }
 
@@ -183,13 +185,18 @@ nav a {
 
 /* Footeri */
 footer {
-    border-top: 2px solid #371f18;
     text-align: center;
-    background: #8b584a;
-    color:#faf6f0;
+    border-bottom: 5px solid #456820;
+    border-top: 5px solid #dbf3c1;
+    background: linear-gradient(#d5f383, #446620);
     bottom: 0;
     width: 100%;
-    padding: 15px;
+}
+footer p {
+    padding-top: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #371f18;
 }
 
 /* ---- */
@@ -235,7 +242,7 @@ ul li span:hover {
 li {
     display: none;
     list-style: none;
-    font-size: 20px;
+    font-size: 25px;
     user-select: none;
     cursor: pointer;
     padding: 12px 8px 12px 50px;
@@ -245,20 +252,21 @@ li {
 li::before {
     content: '';
     position: absolute;
-    height: 30px;
-    width: 30px;
-    background-image: url(gallery/unchecked.svg);
+    height: 35px;
+    width: 35px;
+    background-image: url(gallery/uncheck.svg);
     background-size: cover;
     background-position: center;
     top: 10px;
     left: 2px;
 }
+
 li.valmis {
     color: #344b1b;
     text-decoration: line-through;
 }
 li.valmis::before {
-    background-image: url(gallery/checked.svg);
+    background-image: url(gallery/check.svg);
 }
 /*Scrollbar tehtävälistalle */
 .tpohja::-webkit-scrollbar {
